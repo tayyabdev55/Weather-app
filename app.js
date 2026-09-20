@@ -24,7 +24,7 @@ async function Showwather(event) {
       windkph.innerHTML = "Wind: " + rep.data.current.will_it_rain
      }
       catch (err) {
-        console.log(err.response.data.error.message);
+        temp.innerHTML = err.response.data.error.message;
 
 
     }
