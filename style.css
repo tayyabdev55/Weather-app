@@ -1,0 +1,196 @@
+  /* Modern Google Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-main: #070913;
+            --card-bg: rgba(18, 24, 43, 0.65);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --accent-blue: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glow-color: rgba(6, 182, 212, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.75rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+        }
+
+        form {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 
+                0 20px 40px -15px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        form:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.8),
+                0 0 30px var(--glow-color);
+        }
+
+        label {
+            font-size: 0.825rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-left: 2px;
+        }
+
+        input#inp {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            background: rgba(10, 15, 30, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        input#inp::placeholder {
+            color: #475569;
+        }
+
+        input#inp:focus {
+            background: rgba(10, 15, 30, 0.95);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.18);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.95rem;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
+            background-size: 200% 200%;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 8px 20px -4px rgba(6, 182, 212, 0.4);
+        }
+
+        button:hover {
+            background-position: 100% 0%;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px -4px rgba(6, 182, 212, 0.6);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        p#tem, p#feels, p#hum, p#wind {
+            width: 100%;
+            max-width: 440px;
+            transition: all 0.4s ease;
+        }
+
+        /* Highlighting Temperature Paragraph */
+        p#tem {
+            margin-top: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            background: rgba(18, 24, 43, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 1rem;
+        }
+
+        p#tem:empty {
+            display: none;
+        }
+
+        /* Card styles for supplementary weather parameters */
+        p#feels, p#hum, p#wind {
+            margin-top: 0.6rem;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p#feels:empty, p#hum:empty, p#wind:empty {
+            display: none;
+        }
+
+        /* Interactive highlight effect when text exists in paragraphs */
+        p#feels:not(:empty), p#hum:not(:empty), p#wind:not(:empty) {
+            border-left: 3px solid var(--accent-cyan);
+            color: #cbd5e1;
+        }
+
+        p#feels:not(:empty) { border-left-color: #f43f5e; }
+        p#hum:not(:empty) { border-left-color: var(--accent-cyan); }
+        p#wind:not(:empty) { border-left-color: var(--accent-purple); }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            form {
+                padding: 1.5rem;
+            }
+            p#tem {
+                font-size: 2rem;
+            }
+        }
